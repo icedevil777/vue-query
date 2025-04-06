@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import { useQuery } from '@tanstack/vue-query';
+import { useQuery } from '@tanstack/vue-query'
 import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
-import type { Ref } from 'vue/dist/vue.js';
 
-const { data } = useQuery({
-  queryKey: ['test'],
-  queryFn: () => Promise.resolve(5),
-  select: (data) => data.toString(),
+const fetchTodoList = async () => {
+  const response = await fetch('http://localhost:3000/users')
+  return response.json()
+}
+
+const { isPending, isError, data, error } = useQuery({
+  queryKey: ['users'],
+  queryFn: fetchTodoList,
 })
-
 </script>
 
-
-
-
 <template>
-  <h1>The app! {{ data }}</h1>
+  <span v-if="isPending">Loading...</span>
+  <span v-else-if="isError">Error: {{ error.message }}</span>
+  <!-- We can assume by this point that `isSuccess === true` -->
+  <ul v-else-if="data">
+    <li v-for="todo in data" :key="todo.id">{{ todo.name }} | {{ todo.age }} | {{ todo.email }}</li>
+  </ul>
   <VueQueryDevtools />
 </template>
