@@ -3,8 +3,6 @@ import { useQuery } from '@tanstack/vue-query';
 import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 import type { Ref } from 'vue/dist/vue.js';
 
-const data: Ref<string> | Ref<undefined>
-
 const { data } = useQuery({
   queryKey: ['test'],
   queryFn: () => Promise.resolve(5),
