@@ -1,0 +1,52 @@
+[
+    {
+      "name": "Иван Петров",
+      "age": 28,
+      "email": "ivan.petrov@example.com"
+    },
+    {
+      "name": "Мария Сидорова",
+      "age": 32,
+      "email": "maria.sidorova@example.com"
+    },
+    {
+      "name": "Алексей Иванов",
+      "age": 24,
+      "email": "alexey.ivanov@example.com"
+    },
+    {
+      "name": "Ольга Кузнецова",
+      "age": 45,
+      "email": "olga.kuznetsova@example.com"
+    },
+    {
+      "name": "Дмитрий Смирнов",
+      "age": 19,
+      "email": "dmitry.smirnov@example.com"
+    },
+    {
+      "name": "Екатерина Попова",
+      "age": 37,
+      "email": "ekaterina.popova@example.com"
+    },
+    {
+      "name": "Сергей Васильев",
+      "age": 41,
+      "email": "sergey.vasilyev@example.com"
+    },
+    {
+      "name": "Анна Новикова",
+      "age": 22,
+      "email": "anna.novikova@example.com"
+    },
+    {
+      "name": "Павел Морозов",
+      "age": 29,
+      "email": "pavel.morozov@example.com"
+    },
+    {
+      "name": "Наталья Волкова",
+      "age": 51,
+      "email": "natalya.volkova@example.com"
+    }
+]

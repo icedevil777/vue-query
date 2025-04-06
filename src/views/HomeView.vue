@@ -1,9 +1,22 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { useQuery } from '@tanstack/vue-query';
+import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
+import type { Ref } from 'vue/dist/vue.js';
+
+const data: Ref<string> | Ref<undefined>
+
+const { data } = useQuery({
+  queryKey: ['test'],
+  queryFn: () => Promise.resolve(5),
+  select: (data) => data.toString(),
+})
+
 </script>
 
+
+
+
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>The app! {{ data }}</h1>
+  <VueQueryDevtools />
 </template>
